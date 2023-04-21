@@ -38,6 +38,11 @@ public class InputController : MonoBehaviour
             moveController.Jump();
             canJump = false;
         }
+
+        if (Input.GetButton("Crouch") && canJump)
+        {
+            moveController.Crouch();
+        }
         
     }
 
@@ -49,5 +54,10 @@ public class InputController : MonoBehaviour
     private void OnCollisionStay(Collision collisionInfo)
     {
         if (collisionInfo.collider.CompareTag("Ground")) canJump = true;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground")) canJump = false;
     }
 }

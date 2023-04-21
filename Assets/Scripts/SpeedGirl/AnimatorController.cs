@@ -28,7 +28,7 @@ public class AnimatorController : MonoBehaviour
         {
             if (rig.velocity == Vector3.zero) anim.Play("Idle");
             else if (rig.velocity != Vector3.zero && (IsCurrentAnim("Idle") || IsCurrentAnim("Falling Idle"))) anim.Play("IdleToSprint");
-        } else anim.Play("Running Jump");
+        } else if(!(IsCurrentAnim("Running Jump") || IsCurrentAnim("Falling Idle"))) anim.Play("Running Jump");
     }
 
     private bool IsCurrentAnim(string animName)

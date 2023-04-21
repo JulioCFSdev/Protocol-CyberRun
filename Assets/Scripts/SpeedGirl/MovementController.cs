@@ -16,19 +16,21 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float jumpModifier;
 
     private Rigidbody rig;
+    private CapsuleCollider coll;
+    private Vector3 collCenter = new Vector3(0, 9, 0);
 
     #endregion
 
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
+        coll = GetComponent<CapsuleCollider>();
     }
 
-    private void FixedUpdate()
+    private void ResetColl()
     {
-        Vector3 dir = rig.velocity;
-        dir = new Vector3(dir.x,dir.y - 10,dir.z);
-        rig.velocity = dir;
+        coll.center = collCenter;
+        coll.height = collCenter.y * 2;
     }
 
     public void MoveForward()
@@ -58,11 +60,20 @@ public class MovementController : MonoBehaviour
         dir = new Vector3(speedModifier * -0.6f,dir.y,dir.z);
         rig.velocity = dir;
     }
-
+    
     public void Jump()
     {
         Vector3 dir = rig.velocity;
         dir = new Vector3(dir.x,jumpModifier,dir.z);
         rig.velocity = Vector3.Lerp(rig.velocity, dir, 0.2f);
+    }
+
+    public void Crouch()
+    {
+        coll.center = collCenter / 2;
+        coll.height = collCenter.y;
+        Invoke("ResetColl", 1f);
+
+        rig.velocity = rig.velocity * 1.3f;
     }
 }

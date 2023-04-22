@@ -6,9 +6,11 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     #region Parameters
-
+    
     private float dirX;
     private float dirY;
+    private float mouseX;
+    private float mouseY;
     private AnimatorController animController;
     private MovementController moveController;
     private bool canJump;

@@ -20,7 +20,7 @@ public class MovementController : MonoBehaviour
     private Vector3 collCenter = new Vector3(0, 9, 0);
 
     #endregion
-
+    
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
@@ -68,6 +68,11 @@ public class MovementController : MonoBehaviour
         rig.velocity = Vector3.Lerp(rig.velocity, dir, 0.2f);
     }
 
+    public void RotationX(float rotationY)
+    {
+        transform.rotation = Quaternion.Euler(0, rotationY, 0);
+    }
+    
     public void Crouch()
     {
         coll.center = collCenter / 2;

@@ -14,6 +14,7 @@ public class InputController : MonoBehaviour
     private AnimatorController animController;
     private MovementController moveController;
     private bool canJump;
+    private bool canDash = true;
 
     #endregion
 
@@ -44,6 +45,7 @@ public class InputController : MonoBehaviour
         if (Input.GetButton("Crouch") && canJump)
         {
             moveController.Crouch();
+            TriggerDash();
         }
         
     }
@@ -51,6 +53,22 @@ public class InputController : MonoBehaviour
     public bool isJumping()
     {
         return !canJump;
+    }
+    
+    public bool isDashing()
+    {
+        return !canDash;
+    }
+    
+    private void TriggerDash()
+    {
+        canDash = false;
+        Invoke("DisableDash",1.5f);
+    }
+
+    private void DisableDash()
+    {
+        canDash = true;
     }
 
     private void OnCollisionStay(Collision collisionInfo)

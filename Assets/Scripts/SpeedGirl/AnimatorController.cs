@@ -11,6 +11,10 @@ public class AnimatorController : MonoBehaviour
     private Rigidbody rig;
     private InputController inputController;
 
+    private bool inDashAnim;
+    [SerializeField] private Transform camPos;
+    private Vector3 defaultCamPos;
+
     #endregion
     
     
@@ -19,16 +23,29 @@ public class AnimatorController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
+        defaultCamPos = camPos.position;
         inputController = GetComponent<InputController>();
     }
 
     private void Update()
     {
-        if(!inputController.isJumping())
+        if(!inputController.isDashing())
         {
-            if (rig.velocity == Vector3.zero) anim.Play("Idle");
-            else if (rig.velocity != Vector3.zero && (IsCurrentAnim("Idle") || IsCurrentAnim("Falling Idle"))) anim.Play("IdleToSprint");
-        } else if(!(IsCurrentAnim("Running Jump") || IsCurrentAnim("Falling Idle"))) anim.Play("Running Jump");
+            inDashAnim = false;
+            //camPos.localPosition = defaultCamPos;
+            if (!inputController.isJumping())
+            {
+                if (rig.velocity == Vector3.zero) anim.Play("Idle");
+                else if (rig.velocity != Vector3.zero && (IsCurrentAnim("Idle") || IsCurrentAnim("Falling Idle")))
+                    anim.Play("IdleToSprint");
+            }
+            else if (!(IsCurrentAnim("Running Jump") || IsCurrentAnim("Falling Idle"))) anim.Play("Running Jump");
+        }else if (!inDashAnim)
+        {
+            inDashAnim = true;
+            //camPos.localPosition = new Vector3(defaultCamPos.x,defaultCamPos.y/2,defaultCamPos.z);
+            anim.Play("Running Slide");
+        }
     }
 
     private bool IsCurrentAnim(string animName)

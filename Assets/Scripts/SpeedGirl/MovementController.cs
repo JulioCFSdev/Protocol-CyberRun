@@ -35,29 +35,25 @@ public class MovementController : MonoBehaviour
 
     public void MoveForward()
     {
-        Vector3 dir = rig.velocity;
-        dir = new Vector3(dir.x,dir.y,speedModifier);
+        Vector3 dir = (rig.velocity.normalized + transform.forward).normalized * (speedModifier);
         rig.velocity = dir;
     }
     
     public void MoveBack()
     {
-        Vector3 dir = rig.velocity;
-        dir = new Vector3(dir.x,dir.y,speedModifier * -1);
+        Vector3 dir = (rig.velocity.normalized - transform.forward).normalized * (speedModifier);
         rig.velocity = dir;
     }
     
     public void MoveRight()
     {
-        Vector3 dir = rig.velocity;
-        dir = new Vector3(speedModifier * 0.6f,dir.y,dir.z);
+        Vector3 dir = (rig.velocity.normalized + transform.right).normalized * (speedModifier * 0.8f);
         rig.velocity = dir;
     }
     
     public void MoveLeft()
     {
-        Vector3 dir = rig.velocity;
-        dir = new Vector3(speedModifier * -0.6f,dir.y,dir.z);
+        Vector3 dir = (rig.velocity.normalized - transform.right).normalized * (speedModifier * 0.8f);
         rig.velocity = dir;
     }
     

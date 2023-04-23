@@ -30,13 +30,13 @@ public class InputController : MonoBehaviour
         dirY = Input.GetAxis("Vertical");
         dirX = Input.GetAxis("Horizontal");
         
-        if(dirY > 0) moveController.MoveForward();
-        else if(dirY < 0) moveController.MoveBack();
+        if(dirY > 0.1f) moveController.MoveForward();
+        else if(dirY < -0.1f) moveController.MoveBack();
         
-        if(dirX > 0) moveController.MoveRight();
-        else if(dirX < 0) moveController.MoveLeft();
+        if(dirX > 0.1f) moveController.MoveRight();
+        else if(dirX < -0.1f) moveController.MoveLeft();
         
-        if(Input.GetButton("Jump") && canJump)
+        if(Input.GetButton("Jump") && canJump && canDash)
         {
             moveController.Jump();
             canJump = false;

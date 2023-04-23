@@ -12,8 +12,6 @@ public class AnimatorController : MonoBehaviour
     private InputController inputController;
 
     private bool inDashAnim;
-    [SerializeField] private Transform camPos;
-    private Vector3 defaultCamPos;
 
     #endregion
     
@@ -23,7 +21,6 @@ public class AnimatorController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
-        defaultCamPos = camPos.position;
         inputController = GetComponent<InputController>();
     }
 
@@ -32,7 +29,6 @@ public class AnimatorController : MonoBehaviour
         if(!inputController.isDashing())
         {
             inDashAnim = false;
-            //camPos.localPosition = defaultCamPos;
             if (!inputController.isJumping())
             {
                 if (rig.velocity == Vector3.zero) anim.Play("Idle");
@@ -43,7 +39,6 @@ public class AnimatorController : MonoBehaviour
         }else if (!inDashAnim)
         {
             inDashAnim = true;
-            //camPos.localPosition = new Vector3(defaultCamPos.x,defaultCamPos.y/2,defaultCamPos.z);
             anim.Play("Running Slide");
         }
     }

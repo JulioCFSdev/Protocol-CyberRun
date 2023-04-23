@@ -36,32 +36,32 @@ public class MovementController : MonoBehaviour
     public void MoveForward()
     {
         Vector3 dir = (rig.velocity.normalized + transform.forward).normalized * (speedModifier);
-        rig.velocity = dir;
+        rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
     }
     
     public void MoveBack()
     {
         Vector3 dir = (rig.velocity.normalized - transform.forward).normalized * (speedModifier);
-        rig.velocity = dir;
+        rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
     }
     
     public void MoveRight()
     {
         Vector3 dir = (rig.velocity.normalized + transform.right).normalized * (speedModifier * 0.8f);
-        rig.velocity = dir;
+        rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
     }
     
     public void MoveLeft()
     {
         Vector3 dir = (rig.velocity.normalized - transform.right).normalized * (speedModifier * 0.8f);
-        rig.velocity = dir;
+        rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
     }
     
     public void Jump()
     {
         Vector3 dir = rig.velocity;
         dir = new Vector3(dir.x,jumpModifier,dir.z);
-        rig.velocity = Vector3.Lerp(rig.velocity, dir, 0.2f);
+        rig.velocity = dir;
     }
 
     public void RotationX(float rotationY)

@@ -32,6 +32,7 @@ public class MovementController : MonoBehaviour
         Vector3 pos = transform.position;
         transform.position = Vector3.Lerp(transform.position, new Vector3(pos.x, pos.y + .3f, pos.z),0.8f);
         coll.center = collCenter;
+        coll.radius *= 4;
         coll.height = collCenter.y * 2;
     }
 
@@ -66,6 +67,11 @@ public class MovementController : MonoBehaviour
         rig.velocity = dir;
     }
 
+    public void WallJump()
+    {
+        
+    }
+
     public void RotationX(float rotationY)
     {
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
@@ -74,9 +80,10 @@ public class MovementController : MonoBehaviour
     public void Crouch()
     {
         coll.center = collCenter * 1.5f;
+        coll.radius *= .25f;
         coll.height = collCenter.y;
         Invoke("ResetColl", .7f);
-
-        rig.velocity = rig.velocity * 1.3f;
+        Vector3 vel = rig.velocity;
+        rig.velocity = new Vector3(vel.x * 1.8f, vel.y, vel.z * 1.8f);
     }
 }

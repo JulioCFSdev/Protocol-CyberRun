@@ -14,7 +14,11 @@ public class InputController : MonoBehaviour
     private AnimatorController animController;
     private MovementController moveController;
     private bool canJump;
+    private bool canWallJump;
     private bool canDash = true;
+
+    private float jumpCD = .25f;
+    private float timeToJump;
 
     #endregion
 
@@ -36,8 +40,9 @@ public class InputController : MonoBehaviour
         if(dirX > 0.1f) moveController.MoveRight();
         else if(dirX < -0.1f) moveController.MoveLeft();
         
-        if(Input.GetButton("Jump") && canJump && canDash)
+        if(Input.GetButton("Jump") && canJump && canDash && timeToJump <= 0)
         {
+            timeToJump = jumpCD;
             moveController.Jump();
             canJump = false;
         }
@@ -48,6 +53,11 @@ public class InputController : MonoBehaviour
             TriggerDash();
         }
         
+    }
+
+    private void FixedUpdate()
+    {
+        if (timeToJump > 0) timeToJump -= Time.fixedDeltaTime;
     }
 
     public bool isJumping()
@@ -74,10 +84,12 @@ public class InputController : MonoBehaviour
     private void OnCollisionStay(Collision collisionInfo)
     {
         if (collisionInfo.collider.CompareTag("Ground")) canJump = true;
+        if (collisionInfo.collider.CompareTag("Wall")) canJump = true;
     }
 
     private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Ground")) canJump = false;
+        if (other.gameObject.CompareTag("Wall")) canJump = false;
     }
 }

@@ -73,7 +73,7 @@ public class InputController : MonoBehaviour
     private void TriggerDash()
     {
         canDash = false;
-        Invoke("DisableDash",1.5f);
+        Invoke("DisableDash",1f);
     }
 
     private void DisableDash()

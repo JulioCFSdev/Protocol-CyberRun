@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04fe3849-3227-4b5f-92f4-732f7bf3f51e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Protocol-CyberRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Protocol-CyberRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/SpeedGirl.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/SpeedGirl.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Mecanics.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Mecanics.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/InputController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/MovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +92,7 @@
       <workItem from="1682014646771" duration="4470000" />
       <workItem from="1682090619015" duration="2222000" />
       <workItem from="1682098161368" duration="5468000" />
-      <workItem from="1682277394314" duration="3900000" />
+      <workItem from="1682277394314" duration="4411000" />
     </task>
     <servers />
   </component>

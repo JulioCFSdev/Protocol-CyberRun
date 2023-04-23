@@ -29,6 +29,8 @@ public class MovementController : MonoBehaviour
 
     private void ResetColl()
     {
+        Vector3 pos = transform.position;
+        transform.position = Vector3.Lerp(transform.position, new Vector3(pos.x, pos.y + .3f, pos.z),0.8f);
         coll.center = collCenter;
         coll.height = collCenter.y * 2;
     }
@@ -71,9 +73,9 @@ public class MovementController : MonoBehaviour
     
     public void Crouch()
     {
-        coll.center = collCenter / 2;
+        coll.center = collCenter * 1.5f;
         coll.height = collCenter.y;
-        Invoke("ResetColl", 1f);
+        Invoke("ResetColl", .7f);
 
         rig.velocity = rig.velocity * 1.3f;
     }

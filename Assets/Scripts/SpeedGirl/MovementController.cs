@@ -19,6 +19,9 @@ public class MovementController : MonoBehaviour
     private CapsuleCollider coll;
     private Vector3 collCenter = new Vector3(0, 9, 0);
 
+    private float dashMultiplier = 1.8f;
+    private bool dashing;
+
     #endregion
     
     private void Start()
@@ -29,32 +32,45 @@ public class MovementController : MonoBehaviour
 
     private void ResetColl()
     {
+        Vector3 pos = transform.position;
+        transform.position = Vector3.Lerp(transform.position, new Vector3(pos.x, pos.y + .3f, pos.z),0.8f);
         coll.center = collCenter;
         coll.height = collCenter.y * 2;
+        
+        
+        dashing = false;
     }
 
     public void MoveForward()
     {
         Vector3 dir = (rig.velocity.normalized + transform.forward).normalized * (speedModifier);
         rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
+        
+        if(dashing) DashBoost();
     }
     
     public void MoveBack()
     {
         Vector3 dir = (rig.velocity.normalized - transform.forward).normalized * (speedModifier);
         rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
+        
+        if(dashing) DashBoost();
     }
     
     public void MoveRight()
     {
         Vector3 dir = (rig.velocity.normalized + transform.right).normalized * (speedModifier * 0.8f);
         rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
+        
+        if(dashing) DashBoost();
     }
     
     public void MoveLeft()
     {
         Vector3 dir = (rig.velocity.normalized - transform.right).normalized * (speedModifier * 0.8f);
         rig.velocity = new Vector3(dir.x,rig.velocity.y,dir.z);
+        
+        if(dashing) DashBoost();
     }
     
     public void Jump()
@@ -71,10 +87,16 @@ public class MovementController : MonoBehaviour
     
     public void Crouch()
     {
-        coll.center = collCenter / 2;
+        dashing = true;
+        coll.center = collCenter * 1.5f;
         coll.height = collCenter.y;
-        Invoke("ResetColl", 1f);
+        Invoke("ResetColl", .7f);
+        DashBoost();
+    }
 
-        rig.velocity = rig.velocity * 1.3f;
+    private void DashBoost()
+    {
+        Vector3 vel = rig.velocity;
+        rig.velocity = new Vector3(vel.x * dashMultiplier, vel.y, vel.z * dashMultiplier);
     }
 }

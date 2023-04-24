@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     #region Parameters
-    
+
     private float dirX;
     private float dirY;
     private float mouseX;
@@ -21,7 +21,7 @@ public class InputController : MonoBehaviour
     private float timeToJump;
 
     #endregion
-
+    
     private void Start()
     {
         canJump = true;

@@ -12,8 +12,17 @@ public class BackgroundSound : MonoBehaviour
     [SerializeField] private AudioClip[] musics;
     private int currentMusic;
     private float remainMusicTime;
+    public static BackgroundSound bs;
 
     #endregion
+
+    private void Awake()
+    {
+        if(bs != null) Destroy(gameObject);
+
+        bs = this;
+        DontDestroyOnLoad(this);
+    }
 
     private void Start()
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     #region Parameters
-    
+
     private float dirX;
     private float dirY;
     private float mouseX;
@@ -21,7 +21,7 @@ public class InputController : MonoBehaviour
     private float timeToJump;
 
     #endregion
-
+    
     private void Start()
     {
         canJump = true;
@@ -40,7 +40,7 @@ public class InputController : MonoBehaviour
         if(dirX > 0.1f) moveController.MoveRight();
         else if(dirX < -0.1f) moveController.MoveLeft();
         
-        if(Input.GetButton("Jump") && canJump)
+        if(Input.GetButton("Jump") && canJump && canDash && timeToJump <= 0)
         {
             timeToJump = jumpCD;
             moveController.Jump();
@@ -63,6 +63,17 @@ public class InputController : MonoBehaviour
     public bool isJumping()
     {
         return !canJump;
+    }
+    
+    public bool isDashing()
+    {
+        return !canDash;
+    }
+    
+    private void TriggerDash()
+    {
+        canDash = false;
+        Invoke("DisableDash",1f);
     }
 
     private void DisableDash()

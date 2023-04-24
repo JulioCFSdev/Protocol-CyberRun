@@ -6,22 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04fe3849-3227-4b5f-92f4-732f7bf3f51e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Protocol-CyberRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Protocol-CyberRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera and Models Package.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Mecanics.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Mecanics.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/PlayerCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/PlayerCam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Euphoria — Peyruis _ Free Background Music _ Audio Library Release (128 kbps).mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/Euphoria — Peyruis _ Free Background Music _ Audio Library Release (128 kbps).mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Evolution — Theo Dor _ Free Background Music _ Audio Library Release (128 kbps).mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/Evolution — Theo Dor _ Free Background Music _ Audio Library Release (128 kbps).mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Icaro — Iaio Free Background Music Audio Library Release (128 kbps).mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/Icaro — Iaio Free Background Music Audio Library Release (128 kbps).mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelDesing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelDesing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/AnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/AnimatorController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/InputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/MovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/PlayerCam.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/PlayerCam.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +14,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShadowMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/FollowPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FuturisticCarStates.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShadowMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TrafficZone.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -135,24 +119,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/SpeedGirl/MovementController.cs</url>
-          <line>76</line>
-          <properties documentPath="C:\Repositorios\Protocol-CyberRun\Assets\Scripts\SpeedGirl\MovementController.cs" initialLine="76" containingFunctionPresentation="method 'Jump'">
-            <startOffsets>
-              <option value="2081" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2082" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

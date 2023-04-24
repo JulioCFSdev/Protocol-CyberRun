@@ -12,7 +12,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float speedModifier;
     [Range(0,1)]
     [SerializeField] private float turnModifier;
-    [Range(1,1500)]
+    [Range(1,6500)]
     [SerializeField] private float jumpModifier;
 
     private Rigidbody rig;

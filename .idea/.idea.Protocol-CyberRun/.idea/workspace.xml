@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="04fe3849-3227-4b5f-92f4-732f7bf3f51e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Protocol-CyberRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Protocol-CyberRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Plataforma_voadora Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Plataforma_voadora Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelDesing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelDesing.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedGirl/MovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
